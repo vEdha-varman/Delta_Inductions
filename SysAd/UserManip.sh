@@ -1,5 +1,19 @@
-for i in {1..3}
+#!/bin/bash
+
+
+for u in ChiefCommander ArmyGeneral NavyMarshal AirForceChief
     do
-    sudo useradd --create-home u$i
-    echo -e "toor$i\ntoor$i" | sudo passwd u$i
+    sudo useradd --create-home $u
+    echo -e "toor$u\ntoor$u" | sudo passwd $u
+done
+
+
+for g in Army Navy AirForce
+    do
+    sudo groupadd $g
+    for n in {1..50}
+        do
+        sudo useradd --create-home -g $g $g$n
+        echo -e "toor$g$n\ntoor$g$n" | sudo passwd $g$n
+    done
 done
