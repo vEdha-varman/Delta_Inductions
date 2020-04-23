@@ -8,3 +8,7 @@ echo "alias attendance='chmod +x ./AttendManip.sh; ./AttendManip.sh'" >>~/.bashr
 echo "alias record='chmod +x ./RecordManip.sh; ./RecordManip.sh'" >>~/.bashrc
 
 source ~/.bashrc
+
+echo "0 0 * * * $(whoami) autoSchedule" | sudo tee -a /etc/crontab
+
+echo "0 6 * * * $(whoami) attendance" | sudo tee -a /etc/crontab
