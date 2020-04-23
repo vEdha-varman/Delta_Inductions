@@ -7,3 +7,4 @@ echo "alias autoSchedule='chmod +x ./PosManip.sh; ./PosManip.sh'" >>~/.bashrc
 echo "alias attendance='chmod +x ./AttendManip.sh; ./AttendManip.sh'" >>~/.bashrc
 echo "alias record='chmod +x ./RecordManip.sh; ./RecordManip.sh'" >>~/.bashrc
 
+source ~/.bashrc
