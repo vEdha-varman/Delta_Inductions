@@ -1,31 +1,31 @@
 #!/bin/bash
+# Assign Permissions
 
-
-sudo chmod 700 ChiefCommander
+sudo chmod 700 ~ChiefCommander
 
 
 for u in ArmyGeneral NavyMarshal AirForceChief
     do
-    sudo chmod 700 $u
-    sudo setfacl -m u:ChiefCommander:rwx -R ~$u
+    sudo chmod 700 /home/${u}
+    sudo setfacl -m u:ChiefCommander:rwx -R /home/${u}
 done
 
 
-for j in Army{1..50}
+for u in Army{1..50}
     do
-    sudo chmod 700 $j
-    sudo setfacl -m u:ChiefCommander:rwx -R ~$u
-    sudo setfacl -m u:ArmyGeneral:rwx -R ~$u
+    sudo chmod 700 /home/$u
+    sudo setfacl -m u:ChiefCommander:rwx -R /home/$u
+    sudo setfacl -m u:ArmyGeneral:rwx -R /home/$u
 done
-for j in Navy{1..50}
+for u in Navy{1..50}
     do
-    sudo chmod 700 $j
-    sudo setfacl -m u:ChiefCommander:rwx -R ~$u
-    sudo setfacl -m u:NavyMarshal:rwx -R ~$u
+    sudo chmod 700 /home/$u
+    sudo setfacl -m u:ChiefCommander:rwx -R /home/$u
+    sudo setfacl -m u:NavyMarshal:rwx -R /home/$u
 done
-for j in AirForce{1..50}
+for u in AirForce{1..50}
     do
-    sudo chmod 700 $j
-    sudo setfacl -m u:ChiefCommander:rwx -R ~$u
-    sudo setfacl -m u:AirForceChief:rwx -R ~$u
+    sudo chmod 700 /home/$u
+    sudo setfacl -m u:ChiefCommander:rwx -R /home/$u
+    sudo setfacl -m u:AirForceChief:rwx -R /home/$u
 done
