@@ -29,3 +29,4 @@ for u in AirForce{1..50}
     sudo setfacl -m u:ChiefCommander:rwx -R /home/$u
     sudo setfacl -m u:AirForceChief:rwx -R /home/$u
 done
+

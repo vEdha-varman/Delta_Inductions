@@ -1,5 +1,5 @@
 #!/bin/bash
-# To inform Schedule to soldiers
+
 
 Date=$(date +"%F")
 for g in Army Navy AirForce
@@ -16,3 +16,4 @@ for g in Army Navy AirForce
         echo "$Date $pos" | sudo tee -a /home/$g$u/position_allotted.txt
     done
 done
+
