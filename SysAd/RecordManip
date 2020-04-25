@@ -23,7 +23,10 @@ elif [ X"$user" = X"AirForceChief" ]
 then
 	grep -i "$Date.* AirForce" "$loc_file" | awk '{print "\t"$2,$3}'
 else
-	echo "Invalid User $user"
+	# echo "Invalid User $user"
+	grep -i "$Date.* Army" "$loc_file" | awk '{print "\t"$2,$3}'
+	grep -i "$Date.* Navy" "$loc_file" | awk '{print "\t"$2,$3}'
+	grep -i "$Date.* AirForce" "$loc_file" | awk '{print "\t"$2,$3}'
 fi
 
 # fi
